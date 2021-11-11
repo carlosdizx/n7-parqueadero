@@ -15,7 +15,7 @@ package uniandes.cupi2.parqueadero.mundo;
  * <b>inv: </b> <br>
  *  placa != null <br>
  *  !placa.equals( "" ) <br>
- *  horaIngreso != null <br>
+ *  horaIngreso > 0 <br>
  *  marca != null <br>
  *  !marca.equals( "" ) <br>
  *  modelo != null <br>
@@ -176,5 +176,18 @@ public class Carro
     // Invariante
     // -----------------------------------------------------------------
 
-    // TODO Parte 1 Punto B: Implemente y documente el método verificarInvariante.
+    /**
+     * Verifica que el invariante de la clase se cumpla. Si algo falla, lanza un AssertionError. <br>
+     * <b>inv: </b> palabra no es nula ni es cadena vacía y la traducción no es nula ni es cadena vacía
+     */
+    private void verificarInvariante( )
+    {
+        assert placa != null : "La placa es inválida";
+        assert !placa.equals("") : "La placa es inválida";
+        assert horaIngreso > 0 : "La hora de ingreso es inválida";
+        assert marca != null : "La marca es inválida";
+        assert !marca.equals("") : "La marca es inválida";
+        assert modelo != null : "El modelo es inválido";
+        assert !modelo.equals("") : "El modelo es inválido";
+    }
 }
