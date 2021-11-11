@@ -12,7 +12,8 @@ package uniandes.cupi2.parqueadero.mundo;
 
 /**
  * Esta clase representa un puesto en el parqueadero. <br>
- * TODO Parte 1 Punto C: Documente la invariante de la clase.
+ * <b>inv: </b> <br>
+ *  numeroPuesto > 0 <br>
  */
 public class Puesto
 {
@@ -43,6 +44,7 @@ public class Puesto
     {
         carro = null;
         numeroPuesto = pPuesto;
+        verificarInvariante();
     }
 
     // -----------------------------------------------------------------
@@ -119,6 +121,12 @@ public class Puesto
     // Invariante
     // -----------------------------------------------------------------
 
-    // TODO Parte 1 Punto D: Documente e implemente la invariante de la clase.
+    /**
+     * Verifica que el invariante de la clase se cumpla. Si algo falla, lanza un AssertionError. <br>
+     */
+    private void verificarInvariante( )
+    {
+        assert numeroPuesto > 0 : "EL valor del numero de puesto es invalido";
+    }
 
 }

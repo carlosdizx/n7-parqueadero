@@ -180,7 +180,6 @@ public class Carro
 
     /**
      * Verifica que el invariante de la clase se cumpla. Si algo falla, lanza un AssertionError. <br>
-     * <b>inv: </b> palabra no es nula ni es cadena vacía y la traducción no es nula ni es cadena vacía
      */
     private void verificarInvariante( )
     {
