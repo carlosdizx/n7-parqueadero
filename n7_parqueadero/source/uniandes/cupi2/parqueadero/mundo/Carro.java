@@ -65,6 +65,8 @@ public class Carro
         horaIngreso = pHora;
         marca = pMarca;
         modelo = pModelo;
+
+        verificarInvariante();
     }
 
     // -----------------------------------------------------------------
