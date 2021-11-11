@@ -14,7 +14,13 @@ import java.util.ArrayList;
 
 /**
  * Esta clase representa un parqueadero con TAMANO puestos. <br>
- * TODO Parte 1 Punto E: Documente la invariante de la clase.
+ * <b>inv: </b> <br>
+ *  puestos != null <br>
+ *  puestos.length == 40 <br>
+ *  carros != null <br>
+ *  tarifa > 0 <br>
+ *  valorEnCaja >= 0 <br>
+ *  horaActual >= 6 && horaActual <= 21 <br>
  */
 public class Parqueadero
 {
@@ -100,8 +106,8 @@ public class Parqueadero
         }
 
         carros = new ArrayList<Carro>( );
-        
 
+        verificarInvariante();
     }
 
     // -----------------------------------------------------------------
@@ -170,7 +176,7 @@ public class Parqueadero
     public void cambiarTarifa( int pTarifa )
     {
         tarifa = pTarifa;
-        
+        verificarInvariante();
     }
 
     /**
@@ -198,7 +204,7 @@ public class Parqueadero
         {
             abierto = false;
         }
-        
+        verificarInvariante();
     }
 
     /**
@@ -226,7 +232,6 @@ public class Parqueadero
      * <b>pre: </b> La lista de carros y la lista de puestos están inicializadas. <br>
      * <b>post: </b>El carro fue ingresado y agregado a la lista de carros.
      * @param pPlaca Placa del carro que ingresa. pPlaca != null && pPlaca != "".
-     * @param pHora Hora de ingreso. pHora >= HORA_INICIAL && pHora < HORA_CIERRE.
      * @param pMarca Marca del carro. pMarca != null && pMarca != "".
      * @param pModelo Modelo del carro. != null && pModelo != "".
      * @return Puesto en el que fue parqueado el carro. <br>
@@ -290,7 +295,7 @@ public class Parqueadero
         resultado = porPagar;
 
 
-        
+        verificarInvariante();
         return resultado;
     }
 
@@ -426,7 +431,17 @@ public class Parqueadero
     // Invariante
     // -----------------------------------------------------------------
 
-    // TODO Parte 1 Punto F: Documente e implemente la invariante de la clase.
-    // Si lo necesita, puede crear método privados adicionales.
+    /**
+     * Verifica que el invariante de la clase se cumpla. Si algo falla, lanza un AssertionError. <br>
+     */
+    private void verificarInvariante()
+    {
+        assert puestos != null : "Los puestos no se inicializaron";
+        assert puestos.length == 40 : "Los puestos no se con los valores correctos";
+        assert carros != null : "Los carros no se inicializaron";
+        assert tarifa > 0 : "EL valor de la tarifa es invalido";
+        assert valorEnCaja >= 0 : "EL valor en caja es invalido";
+        assert horaActual >= 6 && horaActual <= 21 : "EL valor la hora actual es invalido";
+    }
 
 }
