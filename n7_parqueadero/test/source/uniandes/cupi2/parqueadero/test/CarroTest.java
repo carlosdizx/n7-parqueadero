@@ -113,9 +113,20 @@ public class CarroTest
      * 2) El carro contra el cual se compara tiene una marca lexicográficamente mayor. <br>
      * 3) El carro contra le cual se compara tiene una marca lexicográficamente menor. <br>
      */
+    @Test
     public void testCompararPorMarca( )
     {
-        // TODO Parte 2 Punto D: Completar el método según la documentación dada.
+        setupEscenario1( );
+
+        Carro carroTest = new Carro( "cba321", 15, "Renault", "5" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorMarca(carroTest)==0);
+
+        
+        carroTest = new Carro( "cba321", 15, "Dodge", "5" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorMarca(carroTest)>0);
+        
+        carroTest = new Carro( "cba321", 15, "Wolvaguen", "5" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorMarca(carroTest)<0);
     }
 
     /**
@@ -128,9 +139,20 @@ public class CarroTest
      * 2) El carro contra el cual se compara tiene un modelo lexicográficamente mayor. <br>
      * 3) El carro contra el cual se compara tiene un modelo lexicográficamente menor. <br>
      */
+    @Test
     public void testCompararPorModelo( )
     {
-        // TODO Parte 2 Punto E: Completar el método según la documentación dada.
+        setupEscenario1( );
+
+        Carro carroTest = new Carro( "cba321", 15, "Renault", "4" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)==0);
+
+
+        carroTest = new Carro( "cba321", 15, "Renault", "3" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)>0);
+
+        carroTest = new Carro( "cba321", 15, "Renault", "5" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)<0);
     }
 
     /**
@@ -143,8 +165,17 @@ public class CarroTest
      * 2) El carro contra el cual se compara tiene mayor hora de ingreso. <br>
      * 3) El carro contra el cual se compara tiene menor hora de ingreso. <br>
      */
+    @Test
     public void testCompararPorHoraIngreso( )
     {
-        // TODO Parte 2 Punto F: Completar el método según la documentación dada.
+        Carro carroTest = new Carro( "cba321", 15, "Renault", "4" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)==0);
+
+
+        carroTest = new Carro( "cba321", 12, "Renault", "4" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)>0);
+
+        carroTest = new Carro( "cba321", 17, "Renault", "4" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)<0);
     }
 }

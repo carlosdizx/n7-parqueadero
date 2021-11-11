@@ -142,7 +142,7 @@ public class Carro
      */
     public int compararPorMarca( Carro pCarro )
     {
-        // TODO Parte 2 Punto A: Completar el método según su documentación.
+        return marca.compareToIgnoreCase(pCarro.marca);
     }
 
     /**
@@ -152,7 +152,7 @@ public class Carro
      */
     public int compararPorModelo( Carro pCarro )
     {
-        // TODO Parte 2 Punto B: Completar el método según su documentación.
+        return modelo.compareToIgnoreCase(pCarro.modelo);
     }
 
     /**
@@ -162,7 +162,7 @@ public class Carro
      */
     public int compararPorHoraIngreso( Carro pCarro )
     {
-        // TODO Parte 2 Punto C: Completar el método según su documentación.
+        return horaIngreso == pCarro.horaIngreso ? 0 : horaIngreso > pCarro.horaIngreso ? 1 :  -1;
     }
 
     /**
