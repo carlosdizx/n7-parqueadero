@@ -95,7 +95,7 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
     /**
      * Lista de las carros en el parqueadero.
      */
-    // TODO Parte 5 Punto A: Declarar el atributo listaCarros de tipo JList.
+    private JList listaCarros;
 
     /**
      * Botón para ingresar un carro al parqueadero.
@@ -148,9 +148,9 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
         JPanel principal = new JPanel();
         principal.setLayout( new BorderLayout( ) );
 
-        // TODO Parte 5 Punto B: Inicialice el atributo listaBandas.
-        
-        // TODO Parte 5 Punto C: Agregue el ListSelecionListener al atributo listaBandas.
+        listaCarros = new JList();
+
+        listaCarros.addListSelectionListener(this);
         
         scroll = new JScrollPane( );
         TitledBorder titulo = new TitledBorder( "Carros en el parqueadero" );
@@ -226,7 +226,6 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
     /**
      * Actualiza el panel con la información que entra por parámetro.
      * @param pcarros Carros actualmente en el parqueadero.
-     * @param pActual Carro recién ingresado.
      */
     public void actualizar( ArrayList pcarros )
     {
