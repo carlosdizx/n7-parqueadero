@@ -142,7 +142,7 @@ public class Carro
      */
     public int compararPorMarca( Carro pCarro )
     {
-        return marca.compareToIgnoreCase(pCarro.marca);
+        return marca.compareTo(pCarro.marca);
     }
 
     /**
