@@ -442,7 +442,30 @@ public class Parqueadero
      */
     public Carro buscarPorHoraIngreso( int pHoraIngreso )
     {
-        // TODO Parte 4 Punto B: Completar el método según su documentación.
+        if (!carros.isEmpty())
+        {
+            ordenarPorHoraIngreso();
+            int inferior = 0;
+            int superior = carros.size()-1;
+            Carro buscado = new Carro("",pHoraIngreso,"","");
+            while(inferior<=superior)
+            {
+                int centro = (inferior+superior)/2;
+                Carro carro = carros.get( centro );
+                if (carro.compararPorHoraIngreso(buscado)==0)
+                {
+                    return carro;
+                }
+                else if (carro.compararPorHoraIngreso(buscado)>0)
+                {
+                    superior = centro -1;
+                }
+                else
+                {
+                    inferior = centro +1;
+                }
+            }
+        }
         return null;
     }    
 
@@ -523,11 +546,20 @@ public class Parqueadero
                 System.out.println(parqueadero.darCarros().get(i));
             }
             System.out.println("\n---------------Buscar---------------");
+            System.out.println(parqueadero.buscarCarroPorPlaca("123456"));
             System.out.println(parqueadero.buscarCarroPorPlaca("abcdef"));
             System.out.println(parqueadero.buscarCarroPorPlaca("0a1b2c"));
             System.out.println(parqueadero.buscarCarroPorPlaca("AA0123"));
             System.out.println(parqueadero.buscarCarroPorPlaca("GRT861"));
             System.out.println(parqueadero.buscarCarroPorPlaca("YWZ324q"));
+            System.out.println("\n---------------Buscar por hora de ingreso (binaria)---------------");
+            System.out.println(parqueadero.buscarPorHoraIngreso(9));
+            System.out.println(parqueadero.buscarPorHoraIngreso(11));
+            System.out.println(parqueadero.buscarPorHoraIngreso(6));
+            System.out.println(parqueadero.buscarPorHoraIngreso(8));
+            System.out.println(parqueadero.buscarPorHoraIngreso(10));
+            System.out.println(parqueadero.buscarPorHoraIngreso(7));
+
         } catch (Exception e) {
             System.err.println(e);
         }
