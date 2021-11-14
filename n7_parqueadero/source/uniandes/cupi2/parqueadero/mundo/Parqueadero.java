@@ -378,12 +378,22 @@ public class Parqueadero
     }
 
     /**
-     * Ordena descendentemente las carros por su modelo, utilizando el algoritmo de inserción. <br>
+     * Ordena descendentemente los carros por su modelo, utilizando el algoritmo de inserción. <br>
      * <b> post: </b> Las carros fueron ordenados según su modelo.
      */
     public void ordenarPorModelo( )
     {
-        // TODO Parte 3 Punto B: Completar el método según su documentación.
+        for (int i = 1; i < carros.size(); i++)
+        {
+            int pos = i;
+            Carro aux = carros.get(i);
+            while (pos>0 && carros.get(pos-1).compararPorModelo(aux)>0)
+            {
+                carros.set(pos,carros.get(pos-1));
+                pos--;
+            }
+            carros.set(pos,aux);
+        }
     }
 
     /**
@@ -470,8 +480,14 @@ public class Parqueadero
             {
                 System.out.println(parqueadero.darCarros().get(i));
             }
-            System.out.println("---------------");
+            System.out.println("---------------Ordenado por seleccion---------------");
             parqueadero.ordenarPorMarca();
+            for (int i = 0; i <parqueadero.darCarros().size() ; i++)
+            {
+                System.out.println(parqueadero.darCarros().get(i));
+            }
+            System.out.println("---------------Ordenado por insercion---------------");
+            parqueadero.ordenarPorModelo();
             for (int i = 0; i <parqueadero.darCarros().size() ; i++)
             {
                 System.out.println(parqueadero.darCarros().get(i));
