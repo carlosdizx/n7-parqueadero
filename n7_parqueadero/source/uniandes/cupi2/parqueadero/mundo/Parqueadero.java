@@ -387,7 +387,7 @@ public class Parqueadero
         {
             int pos = i;
             Carro aux = carros.get(i);
-            while (pos>0 && carros.get(pos-1).compararPorModelo(aux)>0)
+            while (pos>0 && carros.get(pos-1).compararPorModelo(aux)<0)
             {
                 carros.set(pos,carros.get(pos-1));
                 pos--;
