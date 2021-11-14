@@ -364,7 +364,22 @@ public class Parqueadero
      */
     public void ordenarPorMarca( )
     {
-        // TODO Parte 3 Punto A: Completar el método según su documentación.        
+        Carro aux = null;
+        for(int i = 0; i < carros.size() ; i++)
+        {
+            int min = i;
+            for (int j =  i+1 ; j < carros.size() ; j++)
+            {
+                Carro ci = carros.get(i);
+                Carro cj = carros.get(j);
+                if (cj.compararPorMarca(ci)<0){
+                    min = j;
+                }
+            }
+            aux = carros.get(i);
+            carros.set(i,carros.get(min));
+            carros.set(min,aux);
+        }
     }
 
     /**
@@ -393,6 +408,7 @@ public class Parqueadero
     public Carro buscarCarroPorPlaca( String pPlaca )
     {
         // TODO Parte 4 Punto A: Completar el método según su documentación.
+        return null;
     }
 
     /**
@@ -403,6 +419,7 @@ public class Parqueadero
     public Carro buscarPorHoraIngreso( int pHoraIngreso )
     {
         // TODO Parte 4 Punto B: Completar el método según su documentación.
+        return null;
     }    
 
     // -----------------------------------------------------------------
@@ -444,4 +461,25 @@ public class Parqueadero
         assert horaActual >= 6 && horaActual <= 21 : "EL valor la hora actual es invalido";
     }
 
+    public static void main(String[] args)
+    {
+        final Parqueadero parqueadero =  new Parqueadero();
+        try {
+            parqueadero.ingresarCarro("123456","Renault","1998");
+            parqueadero.ingresarCarro("abcdef","Mazda","2000");
+            parqueadero.ingresarCarro("0a1b2c","Dodge","1999");
+            for (int i = 0; i <parqueadero.darCarros().size() ; i++)
+            {
+                System.out.println(parqueadero.darCarros().get(i));
+            }
+            System.out.println("---------------");
+            parqueadero.ordenarPorMarca();
+            for (int i = 0; i <parqueadero.darCarros().size() ; i++)
+            {
+                System.out.println(parqueadero.darCarros().get(i));
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }
 }
