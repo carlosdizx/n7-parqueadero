@@ -364,20 +364,16 @@ public class Parqueadero
      */
     public void ordenarPorMarca( )
     {
-        for(int i = 0; i < carros.size() -1 ; i++)
+        for (int i = 0; i < carros.size() - 1; i++) 
         {
-            int min = i;
-            for (int j = i+1 ; j < carros.size()  ; j++)
+            for (int j = i + 1; j < carros.size(); j++)
             {
-                Carro ci = carros.get(i);
-                Carro cj = carros.get(j);
-                if (cj.compararPorMarca(ci)<0){
-                    min = j;
+                if (carros.get(i).compararPorMarca(carros.get(j)) > 0) {
+                    Carro temporal = carros.get(i);
+                    carros.set(i,carros.get(j));
+                    carros.set(j,temporal);
                 }
             }
-            Carro aux = carros.get(i);
-            carros.set(i,carros.get(min));
-            carros.set(min,aux);
         }
     }
 
