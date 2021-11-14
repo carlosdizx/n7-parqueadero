@@ -229,7 +229,7 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
      */
     public void actualizar( ArrayList pcarros )
     {
-        // TODO Parte 5 Punto D: Asigne la lista de carros al atributo listaCarros.
+        listaCarros.setListData(pcarros.toArray());
         if( carroActual != null )
         {
             cambiarSeleccionado( carroActual );
