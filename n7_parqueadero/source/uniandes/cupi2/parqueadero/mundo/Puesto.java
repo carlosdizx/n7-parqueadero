@@ -126,7 +126,7 @@ public class Puesto
      */
     private void verificarInvariante( )
     {
-        assert numeroPuesto > 0 : "EL valor del numero de puesto es invalido";
+        assert numeroPuesto >= 0 : "EL valor del numero de puesto es invalido";
     }
 
 }
