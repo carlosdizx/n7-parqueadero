@@ -424,7 +424,14 @@ public class Parqueadero
      */
     public Carro buscarCarroPorPlaca( String pPlaca )
     {
-        // TODO Parte 4 Punto A: Completar el método según su documentación.
+        for (int i = 0; i < carros.size(); i++)
+        {
+            final Carro carro = carros.get(i);
+            if (carro.darPlaca().equals(pPlaca))
+            {
+                return carro;
+            }
+        }
         return null;
     }
 
@@ -515,6 +522,12 @@ public class Parqueadero
             {
                 System.out.println(parqueadero.darCarros().get(i));
             }
+            System.out.println("\n---------------Buscar---------------");
+            System.out.println(parqueadero.buscarCarroPorPlaca("abcdef"));
+            System.out.println(parqueadero.buscarCarroPorPlaca("0a1b2c"));
+            System.out.println(parqueadero.buscarCarroPorPlaca("AA0123"));
+            System.out.println(parqueadero.buscarCarroPorPlaca("GRT861"));
+            System.out.println(parqueadero.buscarCarroPorPlaca("YWZ324q"));
         } catch (Exception e) {
             System.err.println(e);
         }
