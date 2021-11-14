@@ -402,7 +402,19 @@ public class Parqueadero
      */
     public void ordenarPorHoraIngreso( )
     {
-        // TODO Parte 3 Punto C: Completar el método según su documentación.
+        for (int i = 1; i < carros.size()-1; i++)
+        {
+            for (int j = 0 ; j < carros.size()-1 ; j++)
+            {
+                Carro actual = carros.get(j);
+                Carro siguiente = carros.get(j+1);
+                if (actual.compararPorHoraIngreso(siguiente)>0)
+                {
+                    carros.set(j,siguiente);
+                    carros.set(j+1,actual);
+                }
+            }
+        }
     }
 
     /**
@@ -471,10 +483,15 @@ public class Parqueadero
         final Parqueadero parqueadero =  new Parqueadero();
         try {
             parqueadero.ingresarCarro("123456","Renault","1998");
+            parqueadero.avanzarHora();
             parqueadero.ingresarCarro("abcdef","Mazda","2000");
+            parqueadero.avanzarHora();
             parqueadero.ingresarCarro("0a1b2c","Dodge","2001");
+            parqueadero.avanzarHora();
             parqueadero.ingresarCarro("AA0123","Audi","1995");
+            parqueadero.avanzarHora();
             parqueadero.ingresarCarro("GRT861","Ford","1996");
+            parqueadero.avanzarHora();
             parqueadero.ingresarCarro("YWZ324q","Chevrolet","1997");
             for (int i = 0; i <parqueadero.darCarros().size() ; i++)
             {
@@ -488,6 +505,12 @@ public class Parqueadero
             }
             System.out.println("---------------Ordenado por insercion---------------");
             parqueadero.ordenarPorModelo();
+            for (int i = 0; i <parqueadero.darCarros().size() ; i++)
+            {
+                System.out.println(parqueadero.darCarros().get(i));
+            }
+            System.out.println("---------------Ordenado por burbuja---------------");
+            parqueadero.ordenarPorHoraIngreso();
             for (int i = 0; i <parqueadero.darCarros().size() ; i++)
             {
                 System.out.println(parqueadero.darCarros().get(i));
