@@ -168,14 +168,16 @@ public class CarroTest
     @Test
     public void testCompararPorHoraIngreso( )
     {
-        Carro carroTest = new Carro( "cba321", 15, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)==0);
+    	setupEscenario1( );
+    	
+        Carro carroTest = new Carro( "cba321", 12, "Renault", "4" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorHoraIngreso(carroTest)==0);
 
 
-        carroTest = new Carro( "cba321", 12, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)>0);
+        carroTest = new Carro( "cba321", 11, "Renault", "4" );
+        assertTrue("El carro no tiene la misma marca",carro.compararPorHoraIngreso(carroTest)>0);
 
         carroTest = new Carro( "cba321", 17, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)<0);
+        assertTrue("El carro no tiene la misma marca",carro.compararPorHoraIngreso(carroTest)<0);
     }
 }
