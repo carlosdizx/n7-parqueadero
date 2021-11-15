@@ -685,7 +685,20 @@ public class ParqueaderoTest
     @Test
     public void testBuscarPorPlaca( )
     {
-        // TODO Parte 4 Punto C: Completar el método según la documentación dada.
+        setupEscenario1();
+        try
+        {
+            parqueadero1.ingresarCarro( "ppp111", "Renault", "4" );
+
+            assertNotNull( "El carro deberia encontrarse", parqueadero1.buscarCarroPorPlaca("ppp111"));
+
+            assertNull( "El carro NO deberia encontrars", parqueadero1.buscarCarroPorPlaca("ppp112"));
+
+        }
+        catch (Exception e)
+        {
+            fail( "No deberia haber pasado esto");
+        }
     }
 
     /**
@@ -699,7 +712,22 @@ public class ParqueaderoTest
     @Test
     public void testBuscarPorHoraIngreso( )
     {
-        // TODO Parte 4 Punto D: Completar el método según la documentación dada.
+        setupEscenario1();
+        try
+        {
+            parqueadero1.ingresarCarro( "ppp111", "Renault", "4" );
+
+            assertTrue( "La hora de ingreso del carro no esta bien", parqueadero1.darHoraActual()==6);
+
+            parqueadero1.avanzarHora();
+
+            assertFalse( "La hora de ingreso del carro no esta bien", parqueadero1.darHoraActual()==6);
+
+        }
+        catch (Exception e)
+        {
+            fail( "No deberia haber pasado esto");
+        }
     }
 
 }
