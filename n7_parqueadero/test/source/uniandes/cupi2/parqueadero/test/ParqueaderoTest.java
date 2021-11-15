@@ -601,8 +601,9 @@ public class ParqueaderoTest
             
             assertFalse("Los arreglos son iguales", listadoTest!=parqueadero1.darCarros());
     	}
-    	catch (Exception e) {
-    		System.err.println(e);
+    	catch (Exception e)
+        {
+            fail( "No debio ocurrir esto" );
 		}
     }
 
@@ -632,8 +633,9 @@ public class ParqueaderoTest
 
             assertFalse("Los arreglos son iguales", listadoTest!=parqueadero1.darCarros());
         }
-        catch (Exception e) {
-            System.err.println(e);
+        catch (Exception e)
+        {
+            fail( "No debio ocurrir esto" );
         }
     }
 
@@ -651,8 +653,11 @@ public class ParqueaderoTest
         try
         {
             parqueadero1.ingresarCarro("123456","Renault","1998");
+            parqueadero1.avanzarHora();
             parqueadero1.ingresarCarro("abcdef","Mazda","2000");
+            parqueadero1.avanzarHora();
             parqueadero1.ingresarCarro("0a1b2c","Dodge","2001");
+            parqueadero1.avanzarHora();
             parqueadero1.ingresarCarro("YWZ324q","Chevrolet","1997");
 
             ArrayList listadoTest = parqueadero1.darCarros();
@@ -663,8 +668,9 @@ public class ParqueaderoTest
 
             assertFalse("Los arreglos son iguales", listadoTest!=parqueadero1.darCarros());
         }
-        catch (Exception e) {
-            System.err.println(e);
+        catch (Exception e)
+        {
+            fail( "No debio ocurrir esto" );
         }
     }
     
