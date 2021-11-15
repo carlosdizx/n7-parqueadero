@@ -13,7 +13,7 @@ package uniandes.cupi2.parqueadero.mundo;
 /**
  * Esta clase representa un puesto en el parqueadero. <br>
  * <b>inv: </b> <br>
- *  numeroPuesto > 0 <br>
+ *  numeroPuesto >= 0 <br>
  */
 public class Puesto
 {
@@ -44,6 +44,7 @@ public class Puesto
     {
         carro = null;
         numeroPuesto = pPuesto;
+        
         verificarInvariante();
     }
 

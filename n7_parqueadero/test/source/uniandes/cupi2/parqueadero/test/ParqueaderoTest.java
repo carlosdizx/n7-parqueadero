@@ -39,7 +39,7 @@ public class ParqueaderoTest
     // -----------------------------------------------------------------
     // Métodos
     // -----------------------------------------------------------------
-
+    
     /**
      * Construir el escenario 1
      */
@@ -586,7 +586,24 @@ public class ParqueaderoTest
     @Test
     public void testOrdenarPorMarca( )
     {
-        // TODO Parte 3 Punto D: Completar el método según la documentación dada.
+    	setupEscenario1();
+    	try {
+            parqueadero1.ingresarCarro("123456","Renault","1998");
+            parqueadero1.ingresarCarro("abcdef","Mazda","2000");
+            parqueadero1.ingresarCarro("0a1b2c","Dodge","2001");
+            parqueadero1.ingresarCarro("YWZ324q","Chevrolet","1997");
+
+            ArrayList listadoTest = parqueadero1.darCarros();
+
+            assertTrue("Los arreglos son iguales", listadoTest==parqueadero1.darCarros());
+
+            parqueadero1.ordenarPorMarca();
+            
+            assertFalse("Los arreglos son iguales", listadoTest!=parqueadero1.darCarros());
+    	}
+    	catch (Exception e) {
+    		System.err.println(e);
+		}
     }
 
     /**
@@ -599,7 +616,25 @@ public class ParqueaderoTest
     @Test
     public void testOrdenarPorModelo( )
     {
-        // TODO Parte 3 Punto E: Completar el método según la documentación dada.
+        setupEscenario1();
+        try
+        {
+            parqueadero1.ingresarCarro("123456","Renault","1998");
+            parqueadero1.ingresarCarro("abcdef","Mazda","2000");
+            parqueadero1.ingresarCarro("0a1b2c","Dodge","2001");
+            parqueadero1.ingresarCarro("YWZ324q","Chevrolet","1997");
+
+            ArrayList listadoTest = parqueadero1.darCarros();
+
+            assertTrue("Los arreglos son iguales", listadoTest==parqueadero1.darCarros());
+
+            parqueadero1.ordenarPorModelo();
+
+            assertFalse("Los arreglos son iguales", listadoTest!=parqueadero1.darCarros());
+        }
+        catch (Exception e) {
+            System.err.println(e);
+        }
     }
 
     /**
@@ -612,7 +647,25 @@ public class ParqueaderoTest
     @Test
     public void testOrdenarPorHoraIngreso( )
     {
-        // TODO Parte 3 Punto F: Completar el método según la documentación dada.
+        setupEscenario1();
+        try
+        {
+            parqueadero1.ingresarCarro("123456","Renault","1998");
+            parqueadero1.ingresarCarro("abcdef","Mazda","2000");
+            parqueadero1.ingresarCarro("0a1b2c","Dodge","2001");
+            parqueadero1.ingresarCarro("YWZ324q","Chevrolet","1997");
+
+            ArrayList listadoTest = parqueadero1.darCarros();
+
+            assertTrue("Los arreglos son iguales", listadoTest==parqueadero1.darCarros());
+
+            parqueadero1.ordenarPorHoraIngreso();
+
+            assertFalse("Los arreglos son iguales", listadoTest!=parqueadero1.darCarros());
+        }
+        catch (Exception e) {
+            System.err.println(e);
+        }
     }
     
     /**

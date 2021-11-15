@@ -118,15 +118,16 @@ public class CarroTest
     {
         setupEscenario1( );
 
+        //carro = new Carro( "abc123", 12, "Renault", "4" );
         Carro carroTest = new Carro( "cba321", 15, "Renault", "5" );
         assertTrue("El carro no tiene la misma marca",carro.compararPorMarca(carroTest)==0);
 
         
         carroTest = new Carro( "cba321", 15, "Dodge", "5" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorMarca(carroTest)>0);
+        assertTrue("La comprobacion deberia ser mayor a 0",carro.compararPorMarca(carroTest)>0);
         
         carroTest = new Carro( "cba321", 15, "Wolvaguen", "5" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorMarca(carroTest)<0);
+        assertTrue("La comprobacion deberia ser menor a 0",carro.compararPorMarca(carroTest)<0);
     }
 
     /**
@@ -143,16 +144,17 @@ public class CarroTest
     public void testCompararPorModelo( )
     {
         setupEscenario1( );
-
+        //carro = new Carro( "abc123", 12, "Renault", "4" );
+        
         Carro carroTest = new Carro( "cba321", 15, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)==0);
+        assertTrue("El carro no tiene el mismo modelo",carro.compararPorModelo(carroTest)==0);
 
 
         carroTest = new Carro( "cba321", 15, "Renault", "3" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)>0);
+        assertTrue("La comprobacion deberia ser mayor a 0",carro.compararPorModelo(carroTest)>0);
 
         carroTest = new Carro( "cba321", 15, "Renault", "5" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorModelo(carroTest)<0);
+        assertTrue("La comprobacion deberia ser menor a 0",carro.compararPorModelo(carroTest)<0);
     }
 
     /**
@@ -169,15 +171,15 @@ public class CarroTest
     public void testCompararPorHoraIngreso( )
     {
     	setupEscenario1( );
-    	
+    	//carro = new Carro( "abc123", 12, "Renault", "4" );
         Carro carroTest = new Carro( "cba321", 12, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorHoraIngreso(carroTest)==0);
+        assertTrue("El carro no tiene la misma hora de ingreso",carro.compararPorHoraIngreso(carroTest)==0);
 
 
         carroTest = new Carro( "cba321", 11, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorHoraIngreso(carroTest)>0);
+        assertTrue("La comprobacion deberia ser mayor a 0",carro.compararPorHoraIngreso(carroTest)>0);
 
         carroTest = new Carro( "cba321", 17, "Renault", "4" );
-        assertTrue("El carro no tiene la misma marca",carro.compararPorHoraIngreso(carroTest)<0);
+        assertTrue("La comprobacion deberia ser menor a 0",carro.compararPorHoraIngreso(carroTest)<0);
     }
 }

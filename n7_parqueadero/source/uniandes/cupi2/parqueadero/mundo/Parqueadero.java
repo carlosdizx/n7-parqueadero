@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Esta clase representa un parqueadero con TAMANO puestos. <br>
  * <b>inv: </b> <br>
  *  puestos != null <br>
- *  puestos.length == 40 <br>
+ *  puestos.length == TAMANO <br>
  *  carros != null <br>
  *  tarifa > 0 <br>
  *  valorEnCaja >= 0 <br>
@@ -364,11 +364,12 @@ public class Parqueadero
      */
     public void ordenarPorMarca( )
     {
-        for (int i = 0; i < carros.size() - 1; i++) 
+        for (int i = 0; i < carros.size()-1 ; i++) 
         {
             for (int j = i + 1; j < carros.size(); j++)
             {
-                if (carros.get(i).compararPorMarca(carros.get(j)) > 0) {
+                if (carros.get(i).compararPorMarca(carros.get(j)) > 0) 
+                {
                     Carro temporal = carros.get(i);
                     carros.set(i,carros.get(j));
                     carros.set(j,temporal);
@@ -386,13 +387,13 @@ public class Parqueadero
         for (int i = 1; i < carros.size(); i++)
         {
             int pos = i;
-            Carro aux = carros.get(i);
-            while (pos>0 && carros.get(pos-1).compararPorModelo(aux)<0)
+            Carro actual = carros.get(i);
+            while (pos>0 && actual.compararPorModelo(carros.get(pos-1))<0)
             {
                 carros.set(pos,carros.get(pos-1));
                 pos--;
             }
-            carros.set(pos,aux);
+            carros.set(pos,actual);
         }
     }
 
@@ -501,7 +502,7 @@ public class Parqueadero
     private void verificarInvariante()
     {
         assert puestos != null : "Los puestos no se inicializaron";
-        assert puestos.length == 40 : "Los puestos no se con los valores correctos";
+        assert puestos.length == TAMANO : "Los puestos no tienen los valores correctos";
         assert carros != null : "Los carros no se inicializaron";
         assert tarifa > 0 : "EL valor de la tarifa es invalido";
         assert valorEnCaja >= 0 : "EL valor en caja es invalido";

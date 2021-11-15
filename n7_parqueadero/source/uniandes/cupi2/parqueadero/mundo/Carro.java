@@ -15,7 +15,7 @@ package uniandes.cupi2.parqueadero.mundo;
  * <b>inv: </b> <br>
  *  placa != null <br>
  *  !placa.equals( "" ) <br>
- *  horaIngreso > 0 <br>
+ *  horaIngreso >= 0 && horaIngreso <=24 <br>
  *  marca != null <br>
  *  !marca.equals( "" ) <br>
  *  modelo != null <br>
@@ -142,7 +142,8 @@ public class Carro
      */
     public int compararPorMarca( Carro pCarro )
     {
-        return marca.compareTo(pCarro.marca);
+    	// -x, 0, x
+    	return marca.compareTo(pCarro.marca);
     }
 
     /**
@@ -152,7 +153,7 @@ public class Carro
      */
     public int compararPorModelo( Carro pCarro )
     {
-        return modelo.compareToIgnoreCase(pCarro.modelo);
+        return modelo.compareTo(pCarro.modelo);
     }
 
     /**
@@ -185,7 +186,7 @@ public class Carro
     {
         assert placa != null : "La placa es inválida";
         assert !placa.equals("") : "La placa es inválida";
-        assert horaIngreso > 0 : "La hora de ingreso es inválida";
+        assert horaIngreso >= 0 && horaIngreso <= 24 : "La hora de ingreso es inválida";
         assert marca != null : "La marca es inválida";
         assert !marca.equals("") : "La marca es inválida";
         assert modelo != null : "El modelo es inválido";
