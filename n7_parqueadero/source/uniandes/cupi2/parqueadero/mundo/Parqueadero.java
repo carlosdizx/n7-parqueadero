@@ -438,6 +438,7 @@ public class Parqueadero
         }
     }
 
+
     /**
      * Busca un carro por su placa en la lista de carros.
      * @param pPlaca Placa del carro buscado. pPlaca != null && pPlaca != "".
@@ -488,7 +489,41 @@ public class Parqueadero
             }
         }
         return null;
-    }    
+    }
+
+    /**
+     * Encuentra el primer carro que tiene la placa especificada por parámetro, utilizando búsqueda binaria.
+     * @param pPlaca placa por la que se realizará la búsqueda. pPlaca != null.
+     * @return El primer carro encontrado que tiene la hora de ingreso especificada. Si ningún carro satisface esta condición retorna null.
+     */
+    public Carro buscarBinarioPorPlaca( String pPlaca )
+    {
+        if (!carros.isEmpty())
+        {
+            ordenarDescendentePorPlaca();
+            int inferior = 0;
+            int superior = carros.size()-1;
+            Carro buscado = new Carro(pPlaca,12,"","");
+            while(inferior<=superior)
+            {
+                int centro = (inferior+superior)/2;
+                Carro carro = carros.get( centro );
+                if (carro.compararPorPlaca(buscado)==0)
+                {
+                    return carro;
+                }
+                else if (carro.compararPorPlaca(buscado)>0)
+                {
+                    superior = centro -1;
+                }
+                else
+                {
+                    inferior = centro +1;
+                }
+            }
+        }
+        return null;
+    }
 
     // -----------------------------------------------------------------
     // Puntos de Extensión
