@@ -142,8 +142,8 @@ public class Carro
      */
     public int compararPorMarca( Carro pCarro )
     {
-    	// -x, 0, x
-    	return marca.compareTo(pCarro.marca);
+        int comparacion = marca.compareTo(pCarro.marca);
+        return comparacion==0 ? 0 : comparacion < 0 ? -1 : 1;
     }
 
     /**
@@ -153,7 +153,8 @@ public class Carro
      */
     public int compararPorModelo( Carro pCarro )
     {
-        return modelo.compareTo(pCarro.modelo);
+        int comparacion = modelo.compareTo(pCarro.modelo);
+        return comparacion==0 ? 0 : comparacion < 0 ? -1 : 1;
     }
 
     /**
@@ -169,12 +170,12 @@ public class Carro
     /**
      * Compara el carro actual y el carro que entra por parámetro por su placa.
      * @param pCarro Carro a comparar. pCarro != null.
-     * @return 0 si tienen la misma marca, numero entero positivo si la marca del carro recibido por parámetro es menor, valor entero negativo si es mayor.
+     * @return 0 si tienen la misma marca, 1 si la marca del carro recibido por parámetro es menor, -1 si es mayor.
      */
     public int compararPorPlaca( Carro pCarro )
     {
-        // -x, 0, x
-        return placa.compareTo(pCarro.placa);
+        int comparacion = placa.compareTo(pCarro.placa);
+        return comparacion==0 ? 0 : comparacion < 0 ? -1 : 1;
     }
 
     /**
