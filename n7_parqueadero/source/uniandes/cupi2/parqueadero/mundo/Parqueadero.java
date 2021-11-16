@@ -419,6 +419,26 @@ public class Parqueadero
     }
 
     /**
+     * Ordena descendentemente los carros en el parqueadero por su placa, utilizando el algoritmo de selección. <br>
+     * <b> post: </b> Los carros en el parqueadero fueron ordenados alfabéticamente por su placa descendentemente.
+     */
+    public void ordenarDescendentePorPlaca( )
+    {
+        for (int i = 0; i < carros.size()-1 ; i++)
+        {
+            for (int j = i + 1; j < carros.size(); j++)
+            {
+                if (carros.get(i).compararPorPlaca(carros.get(j)) < 0)
+                {
+                    Carro temporal = carros.get(i);
+                    carros.set(i,carros.get(j));
+                    carros.set(j,temporal);
+                }
+            }
+        }
+    }
+
+    /**
      * Busca un carro por su placa en la lista de carros.
      * @param pPlaca Placa del carro buscado. pPlaca != null && pPlaca != "".
      * @return Carro buscado, null si no hay ningún carro con la placa especificada.
