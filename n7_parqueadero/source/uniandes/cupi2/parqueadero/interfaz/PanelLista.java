@@ -55,9 +55,9 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
     public final static String ORDENAR_POR_MODELO = "Ordenar por modelo";
 
     /**
-     * Comando para ordenar los carros por su hora de ingreso.
+     * Comando para ordenar los carros por su placa.
      */
-    public final static String ORDENAR_POR_HORA = "Ordenar por hora de ingreso";
+    public final static String ORDENAR_POR_PLACA = "Ordenar por placa";
 
     /**
      * Comando para buscar un carro por su placa.
@@ -120,7 +120,7 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
     /**
      * Botón para ordenar los carros por hora de ingreso.
      */
-    private JButton btnOrdenarPorHora;
+    private JButton btnOrdenarPorPlaca;
 
     /**
      * Botón para buscar un carro por su placa.
@@ -199,10 +199,10 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
         btnOrdenarPorModelo.addActionListener( this );
         ordenar.add( btnOrdenarPorModelo );
 
-        btnOrdenarPorHora = new JButton( ORDENAR_POR_HORA );
-        btnOrdenarPorHora.setActionCommand( ORDENAR_POR_HORA );
-        btnOrdenarPorHora.addActionListener( this );
-        ordenar.add( btnOrdenarPorHora );
+        btnOrdenarPorPlaca = new JButton(ORDENAR_POR_PLACA);
+        btnOrdenarPorPlaca.setActionCommand(ORDENAR_POR_PLACA);
+        btnOrdenarPorPlaca.addActionListener( this );
+        ordenar.add(btnOrdenarPorPlaca);
 
         btnBuscarPorPlaca = new JButton( BUSCAR_POR_PLACA );
         btnBuscarPorPlaca.setActionCommand( BUSCAR_POR_PLACA );
@@ -280,9 +280,9 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
         {
             interfaz.ordenarPorModelo( );
         }
-        else if( comando.equals( ORDENAR_POR_HORA ) )
+        else if( comando.equals(ORDENAR_POR_PLACA) )
         {
-            interfaz.ordenarPorHora( );
+            interfaz.ordenarPorPlaca( );
         }
         else if( comando.equals( BUSCAR_POR_PLACA ) )
         {

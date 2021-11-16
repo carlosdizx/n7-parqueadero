@@ -109,17 +109,14 @@ public class InterfazParqueadero extends JFrame
 
         try
         {
+            parqueadero.ingresarCarro("678901","Chevrolet","1997");
+            parqueadero.ingresarCarro("567890","Ford","1996");
+            parqueadero.ingresarCarro("345678","Dodge","2001");
+            parqueadero.ingresarCarro("456789","Audi","1995");
             parqueadero.ingresarCarro("123456","Renault","1998");
-            parqueadero.avanzarHora();
-            parqueadero.ingresarCarro("abcdef","Mazda","2000");
-            parqueadero.avanzarHora();
-            parqueadero.ingresarCarro("0a1b2c","Dodge","2001");
-            parqueadero.avanzarHora();
-            parqueadero.ingresarCarro("AA0123","Audi","1995");
-            parqueadero.avanzarHora();
-            parqueadero.ingresarCarro("GRT861","Ford","1996");
-            parqueadero.avanzarHora();
-            parqueadero.ingresarCarro("YWZ324q","Chevrolet","1997");
+            parqueadero.ingresarCarro("234567","Mazda","2000");
+
+
         }
         catch (Exception e)
         {
@@ -272,11 +269,11 @@ public class InterfazParqueadero extends JFrame
     }
 
     /**
-     * Ordena los carros de forma ascendente en el parqueadero por su hora de ingreso.
+     * Ordena los carros de forma descendente en el parqueadero por su placa.
      */
-    public void ordenarPorHora( )
+    public void ordenarPorPlaca( )
     {
-        parqueadero.ordenarPorHoraIngreso( );
+        parqueadero.ordenarDescendentePorPlaca( );
         actualizar( );
     }
 
