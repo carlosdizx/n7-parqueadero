@@ -167,6 +167,17 @@ public class Carro
     }
 
     /**
+     * Compara el carro actual y el carro que entra por parámetro por su placa.
+     * @param pCarro Carro a comparar. pCarro != null.
+     * @return 0 si tienen la misma marca, numero entero positivo si la marca del carro recibido por parámetro es menor, valor entero negativo si es mayor.
+     */
+    public int compararPorPlaca( Carro pCarro )
+    {
+        // -x, 0, x
+        return placa.compareTo(pCarro.placa);
+    }
+
+    /**
      * Retorna una cadena con la marca, el modelo, la placa y la hora de ingreso del carro, con el siguiente formato: <br>
      * <marca> <modelo> - <placa> <horaIngreso>:00.
      */
