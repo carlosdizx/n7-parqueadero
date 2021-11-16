@@ -426,13 +426,14 @@ public class Parqueadero
     {
         for (int i = 0; i < carros.size()-1 ; i++)
         {
+            Carro actual = carros.get(i);
             for (int j = i + 1; j < carros.size(); j++)
             {
-                if (carros.get(i).compararPorPlaca(carros.get(j)) < 0)
+                Carro siguiente = carros.get(j);
+                if (actual.compararPorPlaca(siguiente) < 0)
                 {
-                    Carro temporal = carros.get(i);
-                    carros.set(i,carros.get(j));
-                    carros.set(j,temporal);
+                    carros.set(i,siguiente);
+                    carros.set(j,actual);
                 }
             }
         }
