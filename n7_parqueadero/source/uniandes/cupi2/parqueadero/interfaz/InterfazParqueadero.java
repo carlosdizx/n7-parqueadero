@@ -107,20 +107,6 @@ public class InterfazParqueadero extends JFrame
         setLocationRelativeTo( null );
         setResizable( false );
 
-        try
-        {
-            parqueadero.ingresarCarro("678901","Chevrolet","1997");
-            parqueadero.ingresarCarro("567890","Ford","1996");
-            parqueadero.ingresarCarro("345678","Dodge","2001");
-            parqueadero.ingresarCarro("456789","Audi","1995");
-            parqueadero.ingresarCarro("123456","Renault","1998");
-            parqueadero.ingresarCarro("234567","Mazda","2000");
-        }
-        catch (Exception e)
-        {
-            System.err.println(e);
-        }
-
         actualizar();
     }
 
