@@ -512,7 +512,7 @@ public class Parqueadero
                 {
                     return carro;
                 }
-                else if (carro.compararPorPlaca(buscado)>0)
+                else if (carro.compararPorPlaca(buscado)<0)
                 {
                     superior = centro -1;
                 }

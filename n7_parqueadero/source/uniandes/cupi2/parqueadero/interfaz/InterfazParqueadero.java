@@ -284,6 +284,7 @@ public class InterfazParqueadero extends JFrame
         if( placa != null )
         {
             Carro carro = parqueadero.buscarBinarioPorPlaca( placa );
+            actualizar();
             if( carro != null )
             {
                 panelLista.cambiarSeleccionado( carro );
