@@ -115,8 +115,6 @@ public class InterfazParqueadero extends JFrame
             parqueadero.ingresarCarro("456789","Audi","1995");
             parqueadero.ingresarCarro("123456","Renault","1998");
             parqueadero.ingresarCarro("234567","Mazda","2000");
-
-
         }
         catch (Exception e)
         {
@@ -285,7 +283,7 @@ public class InterfazParqueadero extends JFrame
         String placa = JOptionPane.showInputDialog( this, "Por favor digite la placa", "Buscar por placa", JOptionPane.QUESTION_MESSAGE );
         if( placa != null )
         {
-            Carro carro = parqueadero.buscarCarroPorPlaca( placa );
+            Carro carro = parqueadero.buscarBinarioPorPlaca( placa );
             if( carro != null )
             {
                 panelLista.cambiarSeleccionado( carro );
@@ -294,10 +292,8 @@ public class InterfazParqueadero extends JFrame
             else
             {
                 JOptionPane.showMessageDialog( this, "No se encontró un carro con esta placa", "Buscar por placa", JOptionPane.ERROR_MESSAGE );
-
             }
         }
-
     }
 
     /**
