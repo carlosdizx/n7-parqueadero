@@ -495,7 +495,7 @@ public class Parqueadero
     /**
      * Encuentra el primer carro que tiene la placa especificada por parámetro, utilizando búsqueda binaria.
      * @param pPlaca placa por la que se realizará la búsqueda. pPlaca != null.
-     * @return El primer carro encontrado que tiene la hora de ingreso especificada. Si ningún carro satisface esta condición retorna null.
+     * @return El primer carro encontrado que tiene la placa especificada. Si ningún carro satisface esta condición retorna null.
      */
     public Carro buscarBinarioPorPlaca( String pPlaca )
     {

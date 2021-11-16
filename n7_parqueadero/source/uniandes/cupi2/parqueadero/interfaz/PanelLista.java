@@ -118,7 +118,7 @@ public class PanelLista extends JPanel implements ActionListener, ListSelectionL
     private JButton btnOrdenarPorModelo;
 
     /**
-     * Botón para ordenar los carros por hora de ingreso.
+     * Botón para ordenar los carros por placa.
      */
     private JButton btnOrdenarPorPlaca;
 
